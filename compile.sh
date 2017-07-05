@@ -669,24 +669,24 @@ make install >> "$DIR/install.log" 2>&1
 cd ..
 echo " done!"
 
-#libxml2
-#echo -n "[libxml2] downloading $LIBXML_VERSION..."
-#download_file "ftp://xmlsoft.org/libxml2/libxml2-$LIBXML_VERSION.tar.gz" | tar -zx >> "$DIR/install.log" 2>&1
-#mv libxml2-$LIBXML_VERSION libxml2
-#echo -n " checking..."
-#cd libxml2
-#RANLIB=$RANLIB ./configure \
-#--disable-ipv6 \
-#--with-libz="$DIR/bin/php7" \
-#--prefix="$DIR/bin/php7" \
-#$EXTRA_FLAGS \
-#$CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
-#echo -n " compiling..."
-#make -j $THREADS >> "$DIR/install.log" 2>&1
-#echo -n " installing..."
-#make install >> "$DIR/install.log" 2>&1
-#cd ..
-#echo " done!"
+libxml2
+echo -n "[libxml2] downloading $LIBXML_VERSION..."
+download_file "ftp://xmlsoft.org/libxml2/libxml2-$LIBXML_VERSION.tar.gz" | tar -zx >> "$DIR/install.log" 2>&1
+mv libxml2-$LIBXML_VERSION libxml2
+echo -n " checking..."
+cd libxml2
+RANLIB=$RANLIB ./configure \
+--disable-ipv6 \
+--with-libz="$DIR/bin/php7" \
+--prefix="$DIR/bin/php7" \
+$EXTRA_FLAGS \
+$CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
+echo -n " compiling..."
+make -j $THREADS >> "$DIR/install.log" 2>&1
+echo -n " installing..."
+make install >> "$DIR/install.log" 2>&1
+cd ..
+echo " done!"
 
 
 
